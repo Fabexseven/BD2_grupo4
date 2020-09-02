@@ -8,7 +8,8 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<!-- Model -->
-		<class>br.edu.unisinos.bd2.model.Fruteira</class>
+		<class>br.edu.unisinos.bd2.model.Tecnico</class>
+		<class>br.edu.unisinos.bd2.model.ClubeTecnico</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="hibernate.show_sql" 				value="true" />
