@@ -3,7 +3,6 @@ package br.edu.unisinos.bd2.model;
 import java.io.Serializable;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,14 +11,13 @@ import javax.persistence.SequenceGenerator;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
-public class ClubeTecnico implements Serializable {
+public class ClubeJogador implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Getter @Setter
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "s_ClubeTecnico")
-	@SequenceGenerator(name = "s_ClubeTecnico", sequenceName = "s_ClubeTecnico", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "s_ClubeJogador")
+	@SequenceGenerator(name = "s_ClubeJogador", sequenceName = "s_ClubeJogador", allocationSize = 1)
 	private Long id;
 	
 	@Getter @Setter
@@ -28,9 +26,9 @@ public class ClubeTecnico implements Serializable {
 	
 	@Getter @Setter
 	@Column(nullable = false)
-	private Long idTecnico;
+	private Long idJogador;
 	
-	public ClubeTecnico() {
+	public ClubeJogador() {
 		
 	}
 }

@@ -1,40 +1,31 @@
 package br.edu.unisinos.bd2.model;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
-public class Tecnico implements Serializable {
+public class Clube implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Getter @Setter
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "s_Tecnico")
-	@SequenceGenerator(name = "s_Tecnico", sequenceName = "s_Tecnico", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "s_Clube")
+	@SequenceGenerator(name = "s_Clube", sequenceName = "s_Clube", allocationSize = 1)
 	private Long id;
-	
-
-	@OneToMany(mappedBy = "tecnico")
 	
 	@Getter @Setter
 	@Column(length = 50, nullable = false)
-	private String nome;	
+	private String nome;		
 	
-	public Tecnico() {
-		
-	}
-
-	public Tecnico(String nome) {
-		this.nome = nome;
-	}
+	@Getter @Setter
+	@Column(nullable = false)
+	private Date dtFundacao;		
 }
