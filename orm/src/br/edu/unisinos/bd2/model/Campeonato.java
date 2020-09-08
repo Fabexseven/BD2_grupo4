@@ -1,16 +1,23 @@
-	package br.edu.unisinos.bd2.model;
+package br.edu.unisinos.bd2.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+@EqualsAndHashCode(of = "id")
+@Entity
 public class Campeonato implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -25,11 +32,22 @@ public class Campeonato implements Serializable {
 	private String nome;		
 	
 	@Getter @Setter
-	@Column(length = 4, nullable = false)
 	private Integer ano;		
 	
 	@Getter @Setter
-	@Column(length = 2, nullable = false)
 	private Integer nroClubes;	
-
+	
+	@Getter @Setter
+	@OneToMany(mappedBy = "campeonato")
+	private List<Rodada> rodadas; 
+	
+	public Campeonato() {
+		rodadas = new ArrayList<>();
+	}
+	
+	public Campeonato(String nome, Integer ano, Integer nroClubes) {
+		this.nome = nome;
+		this.ano = ano;
+		this.nroClubes = nroClubes;
+	}
 }

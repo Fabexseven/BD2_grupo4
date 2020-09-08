@@ -9,6 +9,9 @@
 
 		<!-- Model -->
 		<class>br.edu.unisinos.bd2.model.Campeonato</class>
+		<class>br.edu.unisinos.bd2.model.ClassificacaoRodada</class>
+		<class>br.edu.unisinos.bd2.model.Clube</class>
+		<class>br.edu.unisinos.bd2.model.ClubeJogador</class>
 		<class>br.edu.unisinos.bd2.model.ClubeTecnico</class>
 		<class>br.edu.unisinos.bd2.model.Jogador</class>
 		<class>br.edu.unisinos.bd2.model.Jogo</class>
@@ -19,6 +22,7 @@
 		<properties>
 			<property name="hibernate.show_sql" 				value="true" />
 			<property name="hibernate.format_sql" 				value="false" />
+			<property name="hibernate.temp.use_jdbc_metadata_defaults" value="false" />
 			<property name="hibernate.hbm2ddl.auto" 			value="create" />
 			<property name="hibernate.dialect" 					value="org.hibernate.dialect.PostgreSQL94Dialect" />
 			<property name="javax.persistence.jdbc.url" 		value="jdbc:postgresql://localhost:5432/bd2" />
